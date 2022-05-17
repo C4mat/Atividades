@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "reactinicio",
+    "slug": "reactinicio",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
