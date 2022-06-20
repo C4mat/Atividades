@@ -2,6 +2,9 @@ module.exports = {
   content: ["./src/**/*.tsx"],
   theme: {
     extend: {
+      objectPosition: {
+        'center-bottom': 'center bottom',
+      },
 
       colors: {
         brand: {
@@ -16,6 +19,8 @@ module.exports = {
   plugins: [
     require('@tailwindcss/forms'),
     require('tailwind-scrollbar'),
+
+
 
   ],
 }
