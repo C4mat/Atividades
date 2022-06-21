@@ -4,7 +4,7 @@ export const Comment = () => {
         <div className="bg-zinc-500 p-8 shadow-sm rounded-xl mx-10 ">
 
             <div className="pt-6  text-center space-y-4">
-                <div className="text-lg font-bold">
+                <div className="text-2xl font-bold">
                     Parabéns você concluiu o curso !!!!
 
                 </div>
