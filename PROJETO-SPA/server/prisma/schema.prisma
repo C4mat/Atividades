@@ -13,8 +13,9 @@ datasource db {
 model Feedback {
   id String @id @default(uuid())
 
-  type       String
+
   email      String
+  type       String
   comment    String
   screenshot String?
 
