@@ -16,7 +16,7 @@ describe('Submit feedback', () => {
         await expect(submitFeedback.execute({
 
             type: 'BUG',
-            email: 'email',
+            email: 'example email ',
             comment: 'example comment',
             screenshot: 'data:image/png;base64',
 
@@ -34,7 +34,7 @@ describe('Submit feedback', () => {
         await expect(submitFeedback.execute({
 
             type: '',
-            email: '',
+            email: 'example email ',
             comment: 'example comment',
             screenshot: 'data:image/png;base64',
 
@@ -49,7 +49,7 @@ describe('Submit feedback', () => {
         await expect(submitFeedback.execute({
 
             type: 'BUG',
-            email: 'email',
+            email: 'example email ',
             comment: '',
             screenshot: 'data:image/png;base64',
 
@@ -64,7 +64,7 @@ describe('Submit feedback', () => {
         await expect(submitFeedback.execute({
 
             type: 'BUG',
-            email: 'email',
+            email: 'mat@gmail.com',
             comment: 'ta bugado',
             screenshot: '123',
 
