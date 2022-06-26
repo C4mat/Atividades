@@ -23,7 +23,9 @@ export function FeedbackContentStep({
     onFeedbackSent,
 }: FeedbackContentStepProps) {
     const [screenshot, setScreenshot] = useState<string | null>(null)
+    const [email, setEmail] = useState('');
     const [comment, setComment] = useState('');
+
     const [isSendingFeedback, setIsSendingFeedback] = useState(false);
 
     const feedbackTypeInfo = FeedbackTypes[feedbackType];
@@ -40,6 +42,7 @@ export function FeedbackContentStep({
          })
          */
         await api.post('/feedbacks', {
+            email,
             type: feedbackType,
             comment,
             screenshot,
@@ -77,10 +80,10 @@ export function FeedbackContentStep({
             </header>
 
             <form onSubmit={handleSubmitFeedback} className="my-4 w-full">
-                <textarea
+                <input type="email"
                     className=" min-w-[340px] w-full h-10 text-sm placeholder-slate-800 text-zinc-900 border-zinc-600 bg-transparent rounded-md focus:border-zinc-700 focus:ring-zinc-700 focus:ring-1 resize-none focus:outline-none scrollbar scrollbar-thumb-zinc-900 scrollbar-track-transparent scrollbar-thin"
                     placeholder="Digite o seu email"
-                    onChange={event => setComment(event.target.value)}
+                    onChange={event => setEmail(event.target.value)}
 
 
                 />
