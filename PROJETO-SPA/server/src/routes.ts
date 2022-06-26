@@ -11,7 +11,7 @@ export const routes = express.Router()
 
 
 routes.post('/feedbacks', async (req, res) => {
-    const { type, comment, screenshot } = req.body;
+    const { type, email, comment, screenshot } = req.body;
 
 
 
@@ -23,6 +23,7 @@ routes.post('/feedbacks', async (req, res) => {
     await submitFeedbackUseCase.execute({
 
         type,
+        email,
         comment,
         screenshot,
 

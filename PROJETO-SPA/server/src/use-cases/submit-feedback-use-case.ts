@@ -5,6 +5,7 @@ import { FeedbacksRepository } from "../repositories/feedbacks-repository";
 interface SubmitFeedbackUseCaseRequest {
 
     type: string;
+    email: string;
     comment: string;
     screenshot?: string;
 
@@ -17,10 +18,13 @@ export class SubmitFeedbackUseCase {
         private mailAdapter: MailAdapter,
     ) { }
     async execute(request: SubmitFeedbackUseCaseRequest) {
-        const { type, comment, screenshot } = request;
+        const { type, email, comment, screenshot } = request;
 
         if (!type) {
             throw new Error('Type is required.');
+        }
+        if (!email) {
+            throw new Error('email is required.');
         }
         if (!comment) {
             throw new Error('comment is required.');
@@ -32,6 +36,7 @@ export class SubmitFeedbackUseCase {
         await this.feedbacksRepository.create({
 
             type,
+            email,
             comment,
             screenshot,
         })
@@ -41,7 +46,7 @@ export class SubmitFeedbackUseCase {
                 [
 
                     `<div style="font-family: sans-serif; font-size: 16px; color: #111;">`,
-                    `<p> Tipo do feedback: ${type}</p>`,
+                    `<p> Tipo do feedback: ${type}</p>`, `<p> Email do Usuario: ${email}</p>`,
                     `<p>comentario: ${comment}</p>`,
                     screenshot ? `<img src= "${screenshot}"/>` : '',
                     `</div>`
