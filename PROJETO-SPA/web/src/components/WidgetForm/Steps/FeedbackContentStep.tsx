@@ -78,12 +78,24 @@ export function FeedbackContentStep({
 
             <form onSubmit={handleSubmitFeedback} className="my-4 w-full">
                 <textarea
+                    className=" min-w-[340px] w-full h-10 text-sm placeholder-slate-800 text-zinc-900 border-zinc-600 bg-transparent rounded-md focus:border-zinc-700 focus:ring-zinc-700 focus:ring-1 resize-none focus:outline-none scrollbar scrollbar-thumb-zinc-900 scrollbar-track-transparent scrollbar-thin"
+                    placeholder="Digite o seu email"
+                    onChange={event => setComment(event.target.value)}
+
+
+                />
+
+
+
+
+                <textarea
                     className="min-w-[340px] w-full min-h-[112px] text-sm placeholder-slate-800 text-zinc-900 border-zinc-600 bg-transparent rounded-md focus:border-zinc-700 focus:ring-zinc-700 focus:ring-1 resize-none focus:outline-none scrollbar scrollbar-thumb-zinc-900 scrollbar-track-transparent scrollbar-thin"
                     placeholder="Conte com detalhes o que está acontecendo......"
                     onChange={event => setComment(event.target.value)}
 
 
                 />
+
                 <footer className="flex gap-2 mt-2">
                     <ScreenshotButton
                         screenshot={screenshot}

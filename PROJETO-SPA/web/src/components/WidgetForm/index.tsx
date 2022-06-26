@@ -4,6 +4,7 @@ import { CloseButton } from "../CloseButton";
 import bugImageUrl from '../../assets/bug.svg'
 import ideaImageUrl from '../../assets/idea.svg'
 import otherImageUrl from '../../assets/other.svg'
+import praiseImageUrl from '../../assets/praise.svg'
 import { FeedbackTypeStep } from "./Steps/FeedbackTypeStep";
 import { FeedbackContentStep } from "./Steps/FeedbackContentStep";
 import { FeedbackSuccessStep } from "./Steps/FeedbackSuccessStep";
@@ -34,8 +35,19 @@ export const FeedbackTypes = {
             alt: 'Imagem de um balão de opções'
 
         },
-    }
+    },
+
+    PRAISE: {
+        title: 'Elogio',
+        image: {
+            source: praiseImageUrl,
+            alt: 'Imagem de um balão de uma estrela'
+
+        },
+    },
 };
+
+
 
 export type FeedbackType = keyof typeof FeedbackTypes;
 
