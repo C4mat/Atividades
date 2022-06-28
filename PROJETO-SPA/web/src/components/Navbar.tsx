@@ -7,7 +7,7 @@ export function Navbar() {
     const [navbarOpen, setNavbarOpen] = React.useState(false);
     return (
         <>
-            <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-blue-900 mb-3 md:flex">
+            <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-blue-300  dark:bg-blue-900 mb-3 md:flex">
                 <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
                         <a
@@ -34,19 +34,19 @@ export function Navbar() {
                         <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
                             <li className="nav-item">
                                 <a
-                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-zinc-300 hover:opacity-75"
+                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug dark:text-zinc-300 hover:opacity-75"
 
                                 >
-                                    <i className="text-lg leading-lg text-blue-200 opacity-75"></i><span className="ml-2">O QUE É</span>
+                                    <i className="text-lg leading-lg dark:text-blue-200 opacity-75"></i><span className="ml-2">O QUE É</span>
                                 </a>
                             </li>
 
                             <li className="nav-item">
                                 <a
-                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-zinc-300 hover:opacity-75"
+                                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug dark:text-zinc-300 hover:opacity-75"
 
                                 >
-                                    <i className=" text-lg leading-lg text-zinc-600 opacity-75"></i><span className="ml-2">APRENDA MAIS</span>
+                                    <i className=" text-lg leading-lg dark:text-zinc-600 opacity-75"></i><span className="ml-2">APRENDA MAIS</span>
                                 </a>
                             </li>
 

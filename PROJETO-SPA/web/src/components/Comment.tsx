@@ -7,7 +7,7 @@ export const Comment = () => {
             <Navbar />
 
 
-            <div className="bg-zinc-500 p-8 shadow-sm rounded-xl mx-10 ">
+            <div className="bg-blue-200 dark:bg-zinc-500 p-8 shadow-sm rounded-xl mx-10 ">
 
                 <div className="pt-6  text-center space-y-4">
                     <div className="text-2xl font-bold">
