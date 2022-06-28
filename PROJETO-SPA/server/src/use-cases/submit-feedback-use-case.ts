@@ -1,5 +1,7 @@
 import { MailAdapter } from "../adapters/mail-adapter";
 import { FeedbacksRepository } from "../repositories/feedbacks-repository";
+import { date } from "../Date";
+
 
 
 interface SubmitFeedbackUseCaseRequest {
@@ -8,6 +10,7 @@ interface SubmitFeedbackUseCaseRequest {
     email: string;
     comment: string;
     screenshot?: string;
+
 
 
 }
@@ -39,6 +42,7 @@ export class SubmitFeedbackUseCase {
             email,
             comment,
             screenshot,
+
         })
         await this.mailAdapter.sendMail({
             subject: 'Novo Feedback',
@@ -47,7 +51,7 @@ export class SubmitFeedbackUseCase {
 
                     `<div style="font-family: sans-serif; font-size: 16px; color: #111;">`,
                     `<p> Tipo do feedback: ${type}</p>`, `<p> Email do Usuario: ${email}</p>`,
-                    `<p>comentario: ${comment}</p>`,
+                    `<p>comentario: ${comment}</p>`, `<p>Data de envio: ${date}  </p>`,
                     screenshot ? `<img src= "${screenshot}"/>` : '',
                     `</div>`
 
