@@ -11,7 +11,7 @@ export const routes = express.Router()
 
 
 routes.post('/feedbacks', async (req, res) => {
-    const { type, email, comment, screenshot, date } = req.body;
+    const { type, email, comment, screenshot, } = req.body;
 
 
 
