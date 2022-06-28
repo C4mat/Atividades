@@ -8,6 +8,7 @@ describe('Submit feedback', () => {
     it('should be able to submit a feedback', async () => {
         await expect(submitFeedback.execute({
             type: 'BUG',
+            email: 'example email ',
             comment: 'example comment',
             screenshot: 'data:image/png;base64',
         })).resolves.not.toThrow();
@@ -17,6 +18,7 @@ describe('Submit feedback', () => {
     it('should not be able to submit a feedback without type', async () => {
         await expect(submitFeedback.execute({
             type: '',
+            email: 'example email ',
             comment: 'example comment',
             screenshot: 'data:image/png;base64',
         })).rejects.toThrow();
@@ -24,6 +26,7 @@ describe('Submit feedback', () => {
     it('should not be able to submit a feedback without comment', async () => {
         await expect(submitFeedback.execute({
             type: 'BUG',
+            email: 'example email ',
             comment: '',
             screenshot: 'data:image/png;base64',
         })).rejects.toThrow();
@@ -31,6 +34,7 @@ describe('Submit feedback', () => {
     it('should not be able to submit a feedback with an invalid screenshot', async () => {
         await expect(submitFeedback.execute({
             type: 'BUG',
+            email: 'mat@gmail.com',
             comment: 'ta bugado',
             screenshot: '123',
         })).rejects.toThrow();

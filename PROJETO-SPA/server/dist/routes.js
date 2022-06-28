@@ -10,12 +10,13 @@ const prisma_feedbacks_repository_1 = require("./repositories/prisma/prisma-feed
 const submit_feedback_use_case_1 = require("./use-cases/submit-feedback-use-case");
 exports.routes = express_1.default.Router();
 exports.routes.post('/feedbacks', async (req, res) => {
-    const { type, comment, screenshot } = req.body;
+    const { type, email, comment, screenshot, } = req.body;
     const prismaFeedbacksRepository = new prisma_feedbacks_repository_1.PrismaFeedbacksRepository();
     const nodemailerMailAdapter = new nodemailer_mail_adapter_1.NodemailerMailAdapter();
     const submitFeedbackUseCase = new submit_feedback_use_case_1.SubmitFeedbackUseCase(prismaFeedbacksRepository, nodemailerMailAdapter);
     await submitFeedbackUseCase.execute({
         type,
+        email,
         comment,
         screenshot,
     });
